@@ -2,9 +2,10 @@ pipeline {
     agent any
 
     stages {
-        stage('building code') {
+        stage('BUILD DOCKER IMAGE') {
             steps {
-                echo 'Testing the webhook'
+                echo 'Building docker image'
+                sh 'docker build -t myapp:latest .'
             }
         }
     }
