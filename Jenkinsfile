@@ -15,5 +15,6 @@ pipeline {
                 echo 'second step'
                 echo 'this is a jenkins file'
             }
+        }
     }
 }
