@@ -26,11 +26,11 @@ pipeline {
     post {
         success {
             echo "Pipeline is successful"
-            slackSend channel: "jenkins-notifications",color: 'good', message: "my-first-pipeline-slack passed successfully"
+            slackSend channel: "jenkins-notifications",color: 'good', tokenCredentialId: 'slack', message: "my-first-pipeline-slack passed successfully"
         }
         failure {
             echo "Pipeline failed"
-            slackSend channel: "jenkins-notifications",color: 'bad', message: "my-first-pipeline-slack did not pass"
+            slackSend channel: "jenkins-notifications",color: 'bad', tokenCredentialId: 'slack', message: "my-first-pipeline-slack did not pass"
         }
     }
 }
