@@ -9,5 +9,11 @@ pipeline {
                 echo 'this is a jenkins file'
             }
         }
+        stage('New Stage') {
+            steps {
+                echo 'This is another test'
+                echo 'second step'
+                echo 'this is a jenkins file'
+            }
     }
 }
