@@ -4,7 +4,7 @@ pipeline {
     stages {
         stage('building code') {
             steps {
-                echo 'Building the Node app'
+                echo 'Testing the webhook'
             }
         }
     }
