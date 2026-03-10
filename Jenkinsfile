@@ -2,18 +2,23 @@ pipeline {
     agent any
 
     stages {
-        stage('Hello') {
+        stage('building code') {
             steps {
-                echo 'Hello World'
-                echo 'first step'
-                echo 'this is a jenkins file'
+                echo 'Building the Node app'
             }
         }
-        stage('New Stage') {
+        stage('Docker build + Docker push') {
             steps {
-                echo 'This is another test'
-                echo 'second step'
-                echo 'this is a jenkins file'
+                script{
+                    parallel(
+                        "Step 1": {
+                            echo "Parallel 1"
+                        }
+                        "Step 2": {
+                            echo "Parallel 2"
+                        }
+                    )
+                }
             }
         }
     }
