@@ -26,11 +26,11 @@ pipeline {
     post {
         success {
             echo "Pipeline is successful"
-            emailext body: 'WOrked!', subject: 'your pipeline is working', to: 'jemaf12907@devlug.com'
+            slackSend channel: "jenkins-notifications",color: 'good', message: "my-first-pipeline-slack passed successfully"
         }
         failure {
             echo "Pipeline failed"
-            emailext body: 'did not WOrked!', subject: 'your pipeline is not working', to: 'jemaf12907@devlug.com'
+            slackSend channel: "jenkins-notifications",color: 'bad', message: "my-first-pipeline-slack did not pass"
         }
     }
 }
