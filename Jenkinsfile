@@ -23,4 +23,14 @@ pipeline {
             }
         }
     }
+    post {
+        success {
+            echo "Pipeline is successful"
+            emailext body: 'WOrked!', subject: 'your pipeline is working', to: 'jemaf12907@devlug.com'
+        }
+        failure {
+            echo "Pipeline failed"
+            emailext body: 'did not WOrked!', subject: 'your pipeline is not working', to: 'jemaf12907@devlug.com'
+        }
+    }
 }
